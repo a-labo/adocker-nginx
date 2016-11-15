@@ -1,0 +1,17 @@
+/**
+ * {{pkg.description}}
+ * @module {{pkg.name}}
+ * @version {{pkg.version}}
+ */
+
+'use strict'
+
+const adockerNginx = require('./adocker_nginx')
+
+let lib = adockerNginx.bind(this)
+
+Object.assign(lib, adockerNginx, {
+  adockerNginx
+})
+
+module.exports = lib
