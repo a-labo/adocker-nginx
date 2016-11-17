@@ -20,7 +20,7 @@
   },
   "homepage": "https://github.com/a-labo/adocker-nginx#readme",
   "dependencies": {
-    "adocker": "^1.2.7",
+    "adocker": "^1.4.2",
     "co": "^4.6.0"
   },
   "devDependencies": {
