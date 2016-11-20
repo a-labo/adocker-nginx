@@ -1,6 +1,6 @@
 {
   "name": "adocker-nginx",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "description": "Ngix docker",
   "main": "lib",
   "scripts": {
