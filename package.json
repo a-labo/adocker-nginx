@@ -1,6 +1,6 @@
 {
   "name": "adocker-nginx",
-  "version": "2.1.1",
+  "version": "3.0.0",
   "description": "Ngix docker",
   "main": "lib",
   "scripts": {
@@ -33,6 +33,8 @@
     "ape-tasking": "^4.0.9",
     "ape-tmpl": "^5.0.20",
     "ape-updating": "^4.1.1",
+    "aport": "^1.0.0",
+    "arequest": "^2.0.7",
     "coz": "^6.0.20",
     "injectmock": "^2.0.0"
   },
