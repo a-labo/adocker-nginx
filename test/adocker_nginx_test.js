@@ -31,18 +31,18 @@ describe('adocker-nginx', function () {
       localhostAs: '10.0.2.2'
     })
 
-    let { run, remove, logs, stop, isRunning, hasBuild } = nginx.cli()
+    let { run, remove, logs, stop, isRunning, hasContainer } = nginx.cli()
 
     if (yield isRunning()) {
       yield remove({ force: true })
     }
 
     equal(yield isRunning(), false)
-    equal(yield hasBuild(), false)
+    equal(yield hasContainer(), false)
     yield run()
 
     equal(yield isRunning(), true)
-    equal(yield hasBuild(), true)
+    equal(yield hasContainer(), true)
 
     let { statusCode, body } = yield arequest(`http://localhost:${port}/index.html`)
     equal(statusCode, 200)
@@ -53,7 +53,7 @@ describe('adocker-nginx', function () {
     yield stop()
 
     equal(yield isRunning(), false)
-    equal(yield hasBuild(), true)
+    equal(yield hasContainer(), true)
 
     yield remove({ force: true })
   }))
