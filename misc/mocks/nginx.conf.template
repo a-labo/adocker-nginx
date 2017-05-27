@@ -5,7 +5,7 @@ events { worker_connections 1024; }
 http {
 
   server {
-    listen 80;
+    listen ${HTTP_PORT};
     root ${STATIC_DIR};
   }
 }

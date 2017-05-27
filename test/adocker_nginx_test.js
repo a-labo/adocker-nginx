@@ -5,8 +5,9 @@
 'use strict'
 
 const adockerNginx = require('../lib/adocker_nginx.js')
-const { equal } = require('assert')
+const { equal, ok } = require('assert')
 const aport = require('aport')
+const asleep = require('asleep')
 const arequest = require('arequest')
 const co = require('co')
 
@@ -22,12 +23,19 @@ describe('adocker-nginx', function () {
   }))
 
   it('Adocker nginx', () => co(function * () {
+    let port = yield aport()
     let nginx = adockerNginx('adocker-nginx-test-01', {
       template: `${__dirname}/../misc/mocks/nginx.conf.template`,
-      staticDir: `${__dirname}/../misc/mocks/mock-public`
+      staticDir: `${__dirname}/../misc/mocks/mock-public`,
+      httpPublishPort: port,
+      localhostAs: '10.0.2.2'
     })
 
     let { run, remove, logs, stop, isRunning, hasBuild } = nginx.cli()
+
+    if (yield isRunning()) {
+      yield remove({ force: true })
+    }
 
     equal(yield isRunning(), false)
     equal(yield hasBuild(), false)
@@ -36,7 +44,11 @@ describe('adocker-nginx', function () {
     equal(yield isRunning(), true)
     equal(yield hasBuild(), true)
 
-    yield logs()
+    let { statusCode, body } = yield arequest(`http://localhost:${port}/index.html`)
+    equal(statusCode, 200)
+    ok(body)
+
+    yield asleep(100)
 
     yield stop()
 
