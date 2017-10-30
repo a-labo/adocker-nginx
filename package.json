@@ -1,11 +1,11 @@
 {
   "name": "adocker-nginx",
-  "version": "4.0.2",
+  "version": "5.0.0",
   "description": "Ngix docker",
   "main": "lib",
   "scripts": {
     "test": "node ./ci/test.js",
-    "prepublish": "node ./ci/build.js"
+    "prepare": "node ./ci/build.js"
   },
   "repository": "a-labo/adocker-nginx",
   "keywords": [
@@ -22,25 +22,24 @@
   },
   "homepage": "https://github.com/a-labo/adocker-nginx#readme",
   "dependencies": {
-    "adocker": "^2.0.0",
-    "co": "^4.6.0"
+    "adocker": "^3.0.0"
   },
   "devDependencies": {
-    "amocha": "^2.0.0",
+    "amocha": "^4.0.0",
     "ape-formatting": "^1.0.2",
     "ape-releasing": "^4.0.4",
     "ape-reporting": "^3.0.2",
     "ape-tasking": "^4.0.9",
-    "ape-tmpl": "^5.0.20",
+    "ape-tmpl": "^6.0.2",
     "ape-updating": "^4.1.1",
-    "aport": "^1.0.0",
-    "arequest": "^2.0.7",
+    "aport": "^2.0.0",
+    "arequest": "^3.0.0",
     "asleep": "^1.0.3",
     "coz": "^6.0.20",
     "injectmock": "^2.0.0"
   },
   "engines": {
-    "node": ">=6",
-    "npm": ">=3"
+    "node": ">=7.6",
+    "npm": ">=4"
   }
 }
