@@ -1,6 +1,6 @@
 {
   "name": "adocker-nginx",
-  "version": "5.0.1",
+  "version": "5.0.2",
   "description": "Ngix docker",
   "main": "lib",
   "scripts": {
@@ -25,17 +25,17 @@
     "adocker": "^3.0.0"
   },
   "devDependencies": {
-    "amocha": "^4.0.0",
+    "amocha": "^5.0.0",
     "ape-formatting": "^1.0.2",
     "ape-releasing": "^4.0.4",
     "ape-reporting": "^3.0.2",
     "ape-tasking": "^4.0.9",
-    "ape-tmpl": "^6.0.2",
+    "ape-tmpl": "^6.0.10",
     "ape-updating": "^4.1.1",
     "aport": "^2.0.0",
     "arequest": "^3.0.0",
     "asleep": "^1.0.3",
-    "coz": "^6.0.20",
+    "coz": "^7.0.1",
     "injectmock": "^2.0.0"
   },
   "engines": {
